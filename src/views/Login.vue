@@ -56,11 +56,17 @@ export default {
   },
   methods: {
     submit() {
-      this.$refs.form.validate(valid => {
+      this.$refs.form.validate(async valid => {
         if (valid) {
-          this.$Message.success('登录成功')
-        } else {
-          this.$Message.error('登录失败')
+          const success = await this.$store.dispatch('auth/login', this.model)
+          if (success) {
+            const query = this.$route.query
+            this.$router.push({
+              name: query.redirect_uri_name || 'Dashboard',
+              params: JSON.parse(query.redirect_params || '{}'),
+              query: JSON.parse(query.redirect_query || '{}'),
+            })
+          }
         }
       })
     },
