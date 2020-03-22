@@ -3,42 +3,42 @@
 </template>
 
 <script>
-import "particles.js";
-const particlesJS = window.particlesJS;
+import 'particles.js'
+const particlesJS = window.particlesJS
 
 export default {
-  name: "Background",
+  name: 'Background',
   mounted() {
-    this.genBackground();
+    this.genBackground()
   },
   methods: {
     genBackground() {
-      particlesJS("particles-background", {
+      particlesJS('particles-background', {
         particles: {
           number: {
             value: 30,
             density: {
               enable: true,
-              value_area: 1000
-            }
+              value_area: 1000,
+            },
           },
           color: {
-            value: "#bfbfbf"
+            value: '#bfbfbf',
           },
           shape: {
-            type: "circle",
+            type: 'circle',
             stroke: {
               width: 0,
-              color: "#ffffff"
+              color: '#ffffff',
             },
             polygon: {
-              nb_sides: 10
+              nb_sides: 10,
             },
             image: {
-              src: "img/github.svg",
+              src: 'img/github.svg',
               width: 100,
-              height: 100
-            }
+              height: 100,
+            },
           },
           opacity: {
             value: 0.5,
@@ -47,8 +47,8 @@ export default {
               enable: true,
               speed: 0.8,
               opacity_min: 0.3,
-              sync: false
-            }
+              sync: false,
+            },
           },
           size: {
             value: 15,
@@ -57,81 +57,84 @@ export default {
               enable: false,
               speed: 40,
               size_min: 0.1,
-              sync: false
-            }
+              sync: false,
+            },
           },
           line_linked: {
             enable: true,
             distance: 300,
-            color: "#c5c5c5",
+            color: '#c5c5c5',
             opacity: 0.4,
-            width: 1
+            width: 1,
           },
           move: {
             enable: true,
             speed: 2,
-            direction: "none",
+            direction: 'none',
             random: true,
             straight: false,
-            out_mode: "out",
+            out_mode: 'out',
             bounce: false,
             attract: {
               enable: false,
               rotateX: 600,
-              rotateY: 1200
-            }
-          }
+              rotateY: 1200,
+            },
+          },
         },
         interactivity: {
-          detect_on: "canvas",
+          detect_on: 'canvas',
           events: {
             onhover: {
               enable: false,
-              mode: "repulse"
+              mode: 'repulse',
             },
             onclick: {
               enable: false,
-              mode: "push"
+              mode: 'push',
             },
-            resize: true
+            resize: true,
           },
           modes: {
             grab: {
               distance: 400,
               line_linked: {
-                opacity: 1
-              }
+                opacity: 1,
+              },
             },
             bubble: {
               distance: 400,
               size: 40,
               duration: 2,
               opacity: 0.8471528471528471,
-              speed: 3
+              speed: 3,
             },
             repulse: {
               distance: 200,
-              duration: 0.4
+              duration: 0.4,
             },
             push: {
-              particles_nb: 4
+              particles_nb: 4,
             },
             remove: {
-              particles_nb: 2
-            }
-          }
+              particles_nb: 2,
+            },
+          },
         },
-        retina_detect: true
-      });
-    }
-  }
-};
+        retina_detect: true,
+      })
+    },
+  },
+}
 </script>
 
 <style scoped>
 .particles-background {
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 0;
 }
 </style>
