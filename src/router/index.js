@@ -61,6 +61,13 @@ export function connectStore(store) {
     } else {
       LoadingBar.finish()
     }
+    try {
+      const defaultComp = to.matched[0].components.default
+      const layout = defaultComp.layout
+      store.commit('app/APPLY_LAYOUT', layout)
+    } catch (error) {
+      // pass
+    }
   })
 }
 

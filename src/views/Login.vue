@@ -39,6 +39,7 @@ import Background from '../components/commom/Background'
 
 export default {
   name: 'Login',
+  layout: 'empty',
   components: {
     Background,
   },
