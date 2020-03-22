@@ -1,10 +1,5 @@
 <template>
-  <div class="home">
-    <h1>This is home page</h1>
-    <router-link to="/about">About</router-link> |
-    <router-link to="/dashboard">Dashboard</router-link> |
-    <router-link to="/article">Article</router-link>
-  </div>
+  <div class="home"></div>
 </template>
 
 <script>
