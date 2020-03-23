@@ -3,7 +3,7 @@ export default [
     path: '/',
     name: 'Home',
     component: () => import('../views/Home.vue'),
-    meta: { title: '主页', icon: 'md-stats', menu: true },
+    meta: { title: '主页', icon: 'md-home', menu: true },
   },
   {
     path: '/login',
@@ -27,6 +27,36 @@ export default [
     path: '/article',
     name: 'Article',
     component: () => import('../views/Article.vue'),
-    meta: { title: '文章管理', icon: 'md-create' },
+    meta: { title: '文章管理', icon: 'md-bookmarks' },
+  },
+  {
+    path: '/category',
+    name: 'Category',
+    component: () => import('../views/Category.vue'),
+    meta: { title: '分类管理', icon: 'md-filing', menu: true },
+  },
+  {
+    path: '/Tag',
+    name: 'Tag',
+    component: () => import('../views/Tag.vue'),
+    meta: { title: '标签管理', icon: 'md-bookmark', menu: true },
+  },
+  {
+    path: '/comment',
+    name: 'Comment',
+    component: () => import('../views/Comment.vue'),
+    meta: { title: '评论管理', icon: 'md-text', menu: true },
+  },
+  {
+    path: '/moment',
+    name: 'Moment',
+    component: () => import('../views/Moment.vue'),
+    meta: { title: '说说管理', icon: 'md-timer', menu: true },
+  },
+  {
+    path: '/setting',
+    name: 'Setting',
+    component: () => import('../views/Setting.vue'),
+    meta: { title: '配置管理', icon: 'md-settings', menu: true },
   },
 ]
