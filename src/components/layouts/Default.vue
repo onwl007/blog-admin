@@ -3,7 +3,10 @@
     <Sider class="app-sider" hidden-trigger collapsible :collapsed-width="78">
       <div class="profile">
         <div class="user">
-          <img class="avatar" alt="" srcset="" />
+          <img
+            class="avatar"
+            src="../../../public/img/icons/android-chrome-192x192.png"
+          />
           <h2 class="name">name</h2>
           <p class="slogan">Hello World</p>
         </div>
@@ -52,7 +55,7 @@
               <span>{{ submenu.meta.title }}</span>
             </MenuItem>
           </Submenu>
-          <MenuItem class="menu=link" :name="menu.name" :key="menu.name" v-else>
+          <MenuItem class="menu-link" :name="menu.name" :key="menu.name" v-else>
             <Icon :type="menu.meta.icon" v-if="menu.meta.icon"></Icon>
             <span>{{ menu.meta.title }}</span>
           </MenuItem>

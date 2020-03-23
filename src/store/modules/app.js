@@ -3,7 +3,7 @@
 const APPLY_LAYOUT = 'APPLY_LAYOUT'
 
 export const state = {
-  layout: 'default',
+  layout: 'empty',
 }
 
 export const getters = {
