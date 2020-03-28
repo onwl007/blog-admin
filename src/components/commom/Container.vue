@@ -1,6 +1,11 @@
 <template>
   <div class="container">
-    <div class="header">
+    <div
+      class="header"
+      v-if="
+        hasLogoSlots || log || hasTitleSlots || hasDescSlots || title || desc
+      "
+    >
       <div class="logo" v-if="hasLogoSlots || logo">
         <Icon :type="logo" size="28" v-if="logo"></Icon>
         <slot name="logo" v-else></slot>
