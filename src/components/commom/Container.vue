@@ -36,6 +36,7 @@
 <script>
 export default {
   name: 'Container',
+
   props: {
     logo: {
       type: String,
@@ -49,30 +50,34 @@ export default {
       type: String,
       default: '',
     },
+  },
 
-    computed: {
-      hasTitleSlots() {
-        return this.getNamedSlotsExist('title')
-      },
-      hasLogoSlots() {
-        return this.getNamedSlotsExist('logo')
-      },
-      hasActionSlots() {
-        return this.getNamedSlotsExist('action')
-      },
-      hasDescSlots() {
-        return this.getNamedSlotsExist('desc')
-      },
-      hasFilterSlots() {
-        return this.getNamedSlotsExist('filter')
-      },
+  computed: {
+    hasTitleSlots() {
+      return this.getNamedSlotsExist('title')
     },
 
-    methods: {
-      getNamedSlotsExist(name) {
-        const slots = this.$slots[name]
-        return Boolean(slots && slots.length)
-      },
+    hasLogoSlots() {
+      return this.getNamedSlotsExist('logo')
+    },
+
+    hasActionSlots() {
+      return this.getNamedSlotsExist('action')
+    },
+
+    hasDescSlots() {
+      return this.getNamedSlotsExist('desc')
+    },
+
+    hasFilterSlots() {
+      return this.getNamedSlotsExist('filter')
+    },
+  },
+
+  methods: {
+    getNamedSlotsExist(name) {
+      const slots = this.$slots[name]
+      return Boolean(slots && slots.length)
     },
   },
 }
@@ -112,11 +117,11 @@ export default {
 .detail .action {
   margin-left: 48px;
 }
-.content {
+.container .content {
   margin: 24px;
   margin-top: 89px;
 }
-.content .filter {
+.container .content .filter {
   margin-bottom: 16px;
 }
 </style>

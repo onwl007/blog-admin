@@ -83,13 +83,16 @@ export default {
       routeMenus: this.genMenu(routes),
     }
   },
+
   methods: {
     genMenu(r) {
       return r.filter(route => route.meta)
     },
+
     menuClick(name) {
       this.$router.push({ name })
     },
+
     handleLogout() {},
   },
 }
@@ -143,5 +146,13 @@ export default {
 }
 .app-container .app-sider .profile .action a:hover {
   background-color: #57a3f3;
+}
+.app-container .app-header {
+  z-index: 999;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  background-color: #fff;
+}
+.app-container .app-content {
+  margin: 24px;
 }
 </style>
