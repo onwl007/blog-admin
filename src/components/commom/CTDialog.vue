@@ -38,7 +38,7 @@
               v-if="ext.key === 'image'"
               style="margin-right: 8px;"
               type="image"
-              :name="config.UPLOAD_NAME.CATEGORY"
+              :name="'commom'"
               :url="ext.value"
               @on-success="url => uploadSuccess(index, url)"
             ></Uploader>
@@ -65,6 +65,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import { cloneDeep } from 'lodash'
+import Uploader from '../commom/Uploader'
 
 const getDefExt = () => ({
   key: '',
@@ -79,6 +80,9 @@ const getDefMod = () => ({
 
 export default {
   name: 'Dialog',
+  components: {
+    Uploader,
+  },
 
   props: {
     value: Boolean,
