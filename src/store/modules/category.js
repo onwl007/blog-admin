@@ -61,8 +61,9 @@ export const actions = {
     commit(FETCH_LIST_REQUEST)
     // const { success, data } = await API.category.list(params)
     const success = true
+    const data = []
     if (success) {
-      commit(FETCH_LIST_SUCCESS)
+      commit(FETCH_LIST_SUCCESS, data)
     } else {
       commit(FETCH_LIST_FAILURE)
     }

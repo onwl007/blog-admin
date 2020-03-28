@@ -3,7 +3,7 @@
     <Avatar
       slot="logo"
       :icon="$route.meta.icon"
-      style="color: #f56a00; background-color: #fde3cf;"
+      style="color: #f56a00;background-color: #fde3cf"
     ></Avatar>
     <Input
       slot="action"
@@ -15,9 +15,8 @@
       @on-search="search"
       @on-enter="search"
     />
-    <Alert show-icon :type="(cList && cList.length) || 0 ? 'info' : 'warning'">
-      共找到
-      <b style="color: #ff8d13">{{ (cList && cList.length) || 0 }}</b> 个分类
+    <Alert show-icon :type="cList.length ? 'info' : 'warning'">
+      共找到 <b style="color: #FF8D13">{{ cList.length }}</b> 个分类
     </Alert>
     <Row :gutter="16" class="category-list">
       <Col v-bind="colResponsiveProps" class="category-item">
@@ -121,9 +120,11 @@ export default {
       curCategory: null,
     }
   },
+
   created() {
     this.search()
   },
+
   watch: {
     ctDialogVisibile(val) {
       if (!val) {
@@ -131,24 +132,30 @@ export default {
       }
     },
   },
+
   computed: {
     ...mapGetters('category', { cList: 'list', cLoading: 'loading' }),
   },
+
   methods: {
     ...mapActions('category', {
       getCList: 'getList',
       deleteCItem: 'deleteItem',
     }),
+
     async search() {
       await this.getCList(this.query)
     },
+
     add() {
       this.ctDialogVisible = true
     },
+
     edit(item) {
       this.ctDialogVisible = true
       this.curCategory = item
     },
+
     deleteItem(item) {
       this.$Modal.confirm({
         title: '提示',
