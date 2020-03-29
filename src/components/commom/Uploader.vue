@@ -18,7 +18,7 @@
 </template>
 
 <script>
-const uploadTypeMap = {
+export const uploadTypeMap = {
   file: {
     accept: '',
     text: '文件',
